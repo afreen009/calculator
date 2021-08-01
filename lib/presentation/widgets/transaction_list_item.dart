@@ -62,14 +62,15 @@ class TransactionListItem extends StatelessWidget {
                 children: [
                   _buildCustomContainer(
                       'Credit',
-                      user.calculateCreditAmount.toString(),
+                      (double.parse(user.calculateCreditAmount.toString()).toStringAsFixed(2)).toString(),
                       AppTheme.creditColor),
                   _buildCustomContainer(
                       'Debit',
                       user.calculateDebitAmount.toString(),
                       AppTheme.debitColor),
                   _buildCustomContainer('Balance',
-                      user.calculateBalanceAmount.toString(), Colors.blue[100]),
+                  (double.parse(user.calculateCreditAmount.toString()).toStringAsFixed(2)).toString(),
+                       Colors.blue[100]),
                 ],
               ),
             )

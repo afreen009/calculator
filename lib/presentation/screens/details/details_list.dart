@@ -47,7 +47,7 @@ class DetailsList extends StatelessWidget {
                     height: 50,
                     child: Row(
                       children: [
-                        _buildCustomContainer('Credit',
+                        _buildCustomContainer('Credits',
                             _creditTotalAmount.toString(), AppTheme.creditColor),
                         _buildCustomContainer('Debit',
                             _debitTotalAmount.toString(), AppTheme.debitColor),
@@ -292,6 +292,8 @@ static List<dynamic> compareDateStringfied(List<dynamic> transactionList) {
   //Build container
   Expanded _buildCustomContainer(
       String nameOfField, String amount, Color color) {
+        double dbl = double.parse((amount));
+        amount=( dbl.toStringAsFixed(2)).toString();
     return Expanded(
       child: Container(
           decoration: BoxDecoration(boxShadow: [], color: color),
